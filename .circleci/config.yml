@@ -1,0 +1,13 @@
+version: 2.1
+workflows:
+  main:
+    jobs:
+      - build
+jobs:
+  build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large
+    steps:
+      - checkout
+      - run: echo "Do some things"
