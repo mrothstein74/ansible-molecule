@@ -20,6 +20,9 @@ jobs:
           name: verify ansible is installed
           command: ansible --version
       - run:
+          name: install python docker
+          command: pip install docker
+      - run:
           name: install molecule
           command: pip install molecule docker
       - run:
