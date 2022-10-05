@@ -20,11 +20,8 @@ jobs:
           name: verify ansible is installed
           command: ansible --version
       - run:
-          name: install python docker
-          command: pip install docker
-      - run:
           name: install molecule
-          command: pip install molecule docker
+          command: pip3 install molecule docker
       - run:
           name: verify molecule is installed
           command: molecule --version
@@ -34,6 +31,6 @@ jobs:
             pwd
             ls -R
       - run:
-          name: run molecule test
-          command: molecule test
+          name: test docker works
+          command: docker run hello-world
           working_directory: ./ansible_role_redis
