@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include circleci.ansible_role_redis"
+      include_role:
+        name: "circleci.ansible_role_redis"

@@ -15,6 +15,7 @@ jobs:
           command: |
             sudo apt update
             sudo apt install ansible
+            sudo apt-get install -y ansible-lint
       - run:
           name: verify ansible is installed
           command: ansible --version
@@ -24,3 +25,6 @@ jobs:
       - run:
           name: verify molecule is installed
           command: molecule --version
+      - run:
+          name: run molecule test
+          command: molecule test
