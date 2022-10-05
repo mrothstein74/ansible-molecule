@@ -26,5 +26,11 @@ jobs:
           name: verify molecule is installed
           command: molecule --version
       - run:
+          name: list dirs
+          command: |
+            pwd
+            ls -R
+      - run:
           name: run molecule test
           command: molecule test
+          working_directory: ./ansible_role_redis
