@@ -11,5 +11,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install molecule
-          command: docker info
+          name: install ansible
+          command: |
+            sudo apt update
+            sudo apt install ansible
+      - run:
+          name: verify ansible is installed
+          command: ansible --version
