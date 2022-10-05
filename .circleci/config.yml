@@ -10,4 +10,6 @@ jobs:
     resource_class: large
     steps:
       - checkout
-      - run: echo "Do some things"
+      - run:
+          name: install molecule
+          command: docker info
