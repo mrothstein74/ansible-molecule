@@ -31,6 +31,18 @@ jobs:
             pwd
             ls -R
       - run:
-          name: test docker works
-          command: docker run hello-world
+          name: create molecule instance
+          command: molecule create
+          working_directory: ./ansible_role_redis
+      - run:
+          name: verify molecule instance
+          command: molecule list
+          working_directory: ./ansible_role_redis
+      - run:
+          name: test our role with molecule
+          command: molecule converge
+          working_directory: ./ansible_role_redis
+      - run:
+          name: destroy molecule instance
+          command: molecule destroy
           working_directory: ./ansible_role_redis
