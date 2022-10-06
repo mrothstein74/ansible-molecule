@@ -30,18 +30,18 @@ jobs:
           command: |
             pwd
             ls -R
-      - run:
-          name: create molecule instance
-          command: molecule create
-          working_directory: ./ansible_role_redis
-      - run:
-          name: verify molecule instance
-          command: molecule list
-          working_directory: ./ansible_role_redis
-      - run:
-          name: test our role with molecule
-          command: molecule converge
-          working_directory: ./ansible_role_redis
+      # - run:
+      #     name: create molecule instance
+      #     command: molecule create
+      #     working_directory: ./ansible_role_redis
+      # - run:
+      #     name: verify molecule instance
+      #     command: molecule list
+      #     working_directory: ./ansible_role_redis
+      # - run:
+      #     name: test our role with molecule
+      #     command: molecule converge
+      #     working_directory: ./ansible_role_redis
       - run:
           name: run full test sequence with molecule
           command: molecule test
