@@ -21,7 +21,7 @@ jobs:
           command: ansible --version
       - run:
           name: install molecule
-          command: pip3 install molecule docker
+          command: pip3 install molecule molecule-docker
       - run:
           name: verify molecule is installed
           command: molecule --version
