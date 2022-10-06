@@ -43,6 +43,10 @@ jobs:
           command: molecule converge
           working_directory: ./ansible_role_redis
       - run:
+          name: run full test sequence with molecule
+          command: molecule test
+          working_directory: ./ansible_role_redis
+      - run:
           name: destroy molecule instance
           command: molecule destroy
           working_directory: ./ansible_role_redis
